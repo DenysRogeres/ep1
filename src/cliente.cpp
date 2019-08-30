@@ -10,7 +10,7 @@ Cliente::Cliente(){
     set_cpf(0);
 }
 
-Cliente::~Cliente(){
+Cliente::~Client.nae(){
     cout<< "Destrutor da classe Cliente"<< endl;
 }
 
