@@ -1,6 +1,6 @@
 #include <string>
-#ifndef SOCIO
-#define SOCIO
+#ifndef SOCIO_HPP
+#define SOCIO_HPP
 #include "pessoa.hpp"
 
 using namespace std;

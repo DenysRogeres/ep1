@@ -2,66 +2,62 @@
 #include <vector>
 #include <string>
 #include "cliente.hpp"
+#include "modo.hpp"
+
 
 using namespace std;
-template <typename T1>
-
-T1 getInput(){
-    while(true){
-    T1 valor;
-    cin >> valor;
-    if(cin.fail()){
-        cin.clear();
-        cin.ignore(32767,'\n');
-        cout << "Entrada inválida! Insira novamente: " << endl;
-    }
-    else{
-        cin.ignore(32767,'\n');
-        return valor;
-    }
-    }
-}
-
 
 int main(){
-
+     
+    int comando;
+    //int resposta;
+     string nome,telefone,email;
+    // int idade;
+    //long int cpf;
+    
+    
     cout << "Escolha o modo: " << endl;
     cout << "(1) Modo Venda" << endl;
     cout << "(2) Modo Recomendação" << endl;
     cout << "(3) Modo Estoque" <<endl;
-    
-    int comando;
-    int resposta;
-     string nome;
-    int idade;
-    long int cpf;
+    cout << "(4) Sair" << endl;
+   
   
 
     cin >> comando;
 
+    while(comando > 5){
+        cin >> comando;
+    }
+    
+   
+    
+
+
     switch(comando){
         case 1:
-        cout << "Já possui cadastro? " << endl;
+        modo_venda();
+        /*cout << "Já possui cadastro? " << endl;
         cout << "(1) Sim" << endl;
         cout << "(2) Não" << endl;
         cin >> resposta;
-
+/*
         if(resposta==1){
 
         }
         else{
             cout << "Cadastre o cliente:" << endl;
                 cout << "Nome: ";
-                nome = getString();
+                cin >> nome;
 
                 cout << "CPF: ";
                 cpf = getInput<long int>();
 
                 cout << "Telefone: ";
-                telefone = getString();
+                cin >> telefone;
 
-                cout << "Idade: ";
-                email = getInput<int>();
+                cout << "Email: ";
+                cin >> email;
              
                 
                 //cliente.push_back(new Cliente(nome, cpf, telefone, ));
@@ -70,15 +66,26 @@ int main(){
 
 
 
-        }
+        }*/
+        break;
 
 
 
 
         case 2:
+        modo_recomendacao();
+        break;
 
         case 3:
+        modo_venda();
+       
+        
         break;
+
+        case 4:
+        break;
+
+
     }
     
 

@@ -1,4 +1,7 @@
+#ifndef CLIENTE_HPP
+#define CLIENTE_HPP
 #include <string>
+
 
 using namespace std;
 
@@ -35,3 +38,5 @@ void imprime_dados();
 
 
 };
+
+#endif

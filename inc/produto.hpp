@@ -1,3 +1,5 @@
+#ifndef PRODUTO_HPP
+#define PRODUTO_HPP
 #include <string>
 
 using namespace std;
@@ -24,3 +26,6 @@ int get_quant();
 void set_preco(float preco);
 long int get_preco();
 };
+
+
+#endif
