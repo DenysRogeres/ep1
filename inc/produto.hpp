@@ -1,31 +1,37 @@
 #ifndef PRODUTO_HPP
 #define PRODUTO_HPP
 #include <string>
+#include <vector>
+#include <iostream>
+
 
 using namespace std;
 
 class Produto{
 private:
 
-    string nome;
+    string nome_prod;
     int quant;
     float preco;
+    vector <string> categoria;
 
 public:
 
 Produto();
+Produto(string nome_prod, int quant, float preco, vector <string> categoria);
 ~Produto();
 
 //Métodos acessores
-void set_nome(string nome);
-string get_nome();
+void set_nome_prod(string nome_prod);
+string get_nome_prod();
 
 void set_quant(int quant);
 int get_quant();
 
 void set_preco(float preco);
-long int get_preco();
+float get_preco();
+
+
+void imprime_dados();
 };
-
-
 #endif

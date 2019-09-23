@@ -1,7 +1,7 @@
 #include <string>
 #ifndef SOCIO_HPP
 #define SOCIO_HPP
-#include "pessoa.hpp"
+#include "cliente.hpp"
 
 using namespace std;
 
