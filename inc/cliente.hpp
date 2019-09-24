@@ -12,7 +12,7 @@ protected:
     //Atributos
     string nome;
     int idade;
-    long int cpf;
+    string cpf;
     
 
 public:
@@ -27,8 +27,8 @@ string get_nome();
 void set_idade(int idade);
 int get_idade();
 
-void set_cpf(long int cpf);
-long int get_cpf();
+void set_cpf(string cpf);
+string get_cpf();
 
 
 

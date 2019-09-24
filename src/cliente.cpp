@@ -7,7 +7,7 @@ Cliente::Cliente(){
     cout<< "Construtor da classe Cliente" << endl;
     set_nome("");
     set_idade(0);
-    set_cpf(0);
+    set_cpf("");
 }
 
 Cliente::~Cliente(){
@@ -30,10 +30,10 @@ void Cliente::set_idade(int idade){
     this->idade=idade;
 }
 
-long int Cliente::get_cpf(){
-    return idade;
+string Cliente::get_cpf(){
+    return cpf;
 }
 
-void Cliente::set_cpf(long int cpf){
+void Cliente::set_cpf(string cpf){
     this->cpf= cpf;
 }
