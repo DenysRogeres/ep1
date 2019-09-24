@@ -49,7 +49,7 @@ int main(){
 
     switch (comando){
     case 1: 
-    cout << "Modo" <<endl<<endl;
+    cout << "Modo venda" <<endl<<endl;
         break;
     
 
