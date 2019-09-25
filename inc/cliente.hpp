@@ -1,6 +1,7 @@
 #ifndef CLIENTE_HPP
 #define CLIENTE_HPP
 #include <string>
+#include <iostream>
 
 
 using namespace std;

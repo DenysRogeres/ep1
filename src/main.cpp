@@ -32,6 +32,7 @@ int main(){
     int resp_estoque;
   
      //string nome,telefone,email;
+     
     // int idade;
     //long int cpf;
 
