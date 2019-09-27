@@ -19,6 +19,7 @@ protected:
 public:
 //Métodos 
 Cliente(); //Construtor
+Cliente(string nome, int idade,string cpf);
 ~Cliente(); //Destrutor
 
 //Métodos acessores

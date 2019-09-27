@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include"cadastro.hpp"
+#include <fstream>
 
 using namespace std;
 template <typename T1>
@@ -20,38 +21,50 @@ T1 getInput(){
     }
     }
 }
+
 string getString(){
     string entrada;
-    cin.ignore();
-    getline(cin,entrada);
+    //cin.ignore();
+    cin >> entrada;
+   // getline(cin,entrada);
+    
     return entrada;
 }
+fstream arquivoProduto;
+
 Produto prod_cadastro(){
 system("clear");
+arquivoProduto.open("Produto.txt",ios::out|ios::app);
 cout << "Cadastro de produto" <<endl;
-cout << "Nome do produto: " <<endl;
+cout << "Nome do produto: ";
 string nome_prod = getString();
+arquivoProduto<<nome_prod<<endl;
 
-cout << "Quantidade: " <<endl;
+cout << "Quantidade: ";
 int quant = getInput<int>();
+arquivoProduto<<quant<<endl;
 
-cout << "Preço: "<< endl;
+cout << "Preço: ";
 float preco = getInput<float>();
+arquivoProduto<<preco<<endl;
 
 int c=0;
 
 while(c<=0){
-    cout <<"Pertece a quantas categorias?";
+    cout <<"Pertece a quantas categorias?"<<endl;
     c=getInput<int>();
     if(c==1)
-    cout << "Informe sua categoria" <<endl;
+    cout << "Informe sua categoria: "<<endl;
+    
+
     else if(c>1)
-    cout <<"Informe suas categorias" <<endl;
+    cout <<"Informe suas categorias "<<endl;
 }
 vector <string> categoria;
 for(int b=0; b<c;b++){
-    cout << b+1 << "° categoria" <<endl;
+    cout << b+1 << "° categoria: "<<endl;
     categoria.push_back(getString());
+    arquivoProduto << categoria[b]<<endl;
 
 }
 Produto produto;

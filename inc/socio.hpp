@@ -10,8 +10,8 @@ using namespace std;
 
 class Socio: public Cliente{
     protected:
-    string endereco;
-    int telefone;
+    
+    long int telefone;
     string email;
     string data_cadastro;
 
@@ -19,17 +19,14 @@ class Socio: public Cliente{
 
     public:
     Socio();
-    Socio(string nome,int idade,string cpf,string endereco, int telefone,string email,string data_cadastro);
-    Socio(string endereco, int telefone, string email, string data_cadastro);
+    Socio(string nome,int idade,string cpf,long int telefone,string email,string data_cadastro);
+    Socio(long int telefone, string email, string data_cadastro);
 
     ~Socio();
 
     //Métodos acessores
 
-    void set_endereco(string endereco);
-    string get_endereco();
-
-    void set_telefone(int telefone);
+    void set_telefone(long int telefone);
     int get_telefone();
 
     void set_email(string email);

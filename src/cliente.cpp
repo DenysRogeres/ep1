@@ -1,13 +1,19 @@
 #include "cliente.hpp"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 Cliente::Cliente(){
-    cout<< "Construtor da classe Cliente" << endl;
+    //cout<< "Construtor da classe Cliente" << endl;
     set_nome("");
     set_idade(0);
     set_cpf("");
+}
+Cliente::Cliente(string nome,int idade,string cpf){
+    set_nome(nome);
+    set_idade(idade);
+    set_cpf(cpf);
 }
 
 Cliente::~Cliente(){
