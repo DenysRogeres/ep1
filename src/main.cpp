@@ -3,7 +3,6 @@
 #include <string>
 #include <unistd.h>
 #include "cliente.hpp"
-#include "modo.hpp"
 #include "produto.hpp"
 #include "cadastro.hpp"
 #include <fstream>
@@ -23,22 +22,16 @@ T1 getInput(){
             cout << "Entrada inválida! Insira novamete: " <<endl;
         }
     else {
+
         cin.ignore(32767,'\n');
         return valor;
     }
     }
 }
 
-/*string getString(){
-    string entrada;
-    cin.ignore();
-    getline(cin,entrada);
-    return entrada;
-}*/
 
 int main(){
     int comando=-1;
-    //int resposta;
     int comando_estoque;
     fstream arquivoCliente, arquivoProduto;
     string linha;
@@ -50,11 +43,12 @@ int main(){
     string data_cadastro;
     string linhas;
 
+
     vector < Produto* > produtos;
     vector < Cliente*> clientes;
     
 
-    arquivoCliente.open("Cliente.txt");
+    arquivoCliente.open("doc/Cliente.txt");
     while(getline(arquivoCliente,linha)){
         arquivoCliente>>nome;
         arquivoCliente>>cpf;
@@ -62,10 +56,11 @@ int main(){
         
         clientes.push_back(new Cliente(nome,idade,cpf));}
         arquivoCliente.close();
+        
     
     while(comando!=0){
     system("clear");
-    cout << "Escolha o modo: " << endl << "(1) Modo Venda" << endl << "(2) Modo Recomendação" << endl << "(3) Modo Estoque" <<endl <<"(4) Sair" << endl;
+    cout << "Escolha a opção desejada" << endl << "[1] Modo Venda" << endl << "[2] Modo Recomendação" << endl << "[3] Modo Estoque" <<endl <<"[4] Sair" << endl;
 
     comando = getInput<int>();
 
@@ -85,20 +80,23 @@ int main(){
     
     system("clear");
     int comando_venda;
-    cout << "==============Modo Venda=========== "<<endl;
-    cout << "Você entrou no Modo Venda, clientes socios possuem 15% de desconto nas compras " <<endl;
-    cout << "(1) Carrinho" <<endl<< "(2) Cadastrar Cliente" <<endl<< "(3) Cadastrar Socio" <<endl<< "(0) Sair" <<endl;
+    cout <<"======================================"<<endl;
+    cout << "             Modo Venda           "<<endl;
+    cout <<"======================================"<<endl;
+    cout << "Olá, você entrou no Modo Venda, clientes socios possuem 15% de desconto nas compras " <<endl;
+    cout << "[1] Carrinho" <<endl<< "[2] Cadastrar Cliente" <<endl<< "[3] Cadastrar Socio" <<endl<< "[0] Sair" <<endl;
     comando_venda=getInput<int>();
 
     if(comando_venda==1){
+      }
     
-
-    } 
     if(comando_venda==2){
         while(true){
             system("clear");
-            cout <<"=============Cadastro de Cliente============="<< endl;
-            arquivoCliente.open("Clientes.txt",ios::out|ios::app);
+             cout <<"--------------------------------------"<<endl;
+            cout <<"          Cadastro de Cliente         "<< endl;
+             cout <<"---------------------------------------"<<endl;
+            arquivoCliente.open("doc/Clientes.txt",ios::out|ios::app);
             cout << "Nome: ";
             nome=getString();
             arquivoCliente<<nome<<endl;
@@ -121,8 +119,10 @@ int main(){
     if(comando_venda==3){
         while(true){
             system("clear");
-            cout <<"============Cadastro de Cliente Socio============" <<endl;
-            arquivoSocio.open("Socio.txt",ios::out|ios::app);
+            cout <<"--------------------------------------"<<endl;
+            cout <<"      Cadastro de Cliente Sócio        "<< endl;
+             cout <<"---------------------------------------"<<endl;
+            arquivoSocio.open("doc/Socio.txt",ios::out|ios::app);
             cout << "Nome: ";
             nome=getString();
             arquivoSocio<<nome<<endl;
@@ -137,8 +137,7 @@ int main(){
             arquivoSocio<<telefone<<endl;
             cout <<"Email: ";
             email=getString();
-            arquivoSocio<<
-            email<<endl;
+            arquivoSocio<<email<<endl;
             cout << "Data de cadastro: ";
             data_cadastro=getString();
             arquivoSocio<<data_cadastro<<endl;
@@ -160,29 +159,53 @@ int main(){
     break;
 
     case 2:
-    cout << "===========Modo Recomenação=============" <<endl <<endl;;
+    cout <<"======================================"<<endl;
+    cout << "             Modo Recomendação         "<<endl;
+    cout <<"======================================"<<endl;
         break;
 
     case 3:
     while(true){ 
     system("clear");
-    cout << "=============Modo Estoque=================" <<endl<<endl;
-    cout << "(1) Cadastrar Produtos" << endl << "(2) Visualizar produtos " << endl << "(0) Voltar" <<endl;
+    cout <<"======================================"<<endl;
+    cout << "             Modo Estoque          "<<endl;
+    cout <<"======================================"<<endl;
+    cout << "[1] Cadastrar Produtos" << endl << "[2] Visualizar produtos " << endl << "[0] Voltar" <<endl;
     comando_estoque=getInput<int>();
     if(comando_estoque==1){
+        int aux_cadastro=1;
+       while(aux_cadastro){
+
+       
        system("clear");
-    
         produtos.push_back(new Produto(prod_cadastro()));
-        sleep(1);
+        
+       //sleep();
+       cout <<"Deseja cadastrar mais algum produto? [1] Sim [0] Não"<<endl<<endl;
+       aux_cadastro=getInput<int>();
+       if(aux_cadastro==0)
+       break;
+       }
+        
 
     }
     if(comando_estoque==2){
-        int quant_prod;
+        int aux_cadastro=1;
+       
+            int quant_prod;
+            
         quant_prod=produtos.size();
+    
         for(int k=0;k<quant_prod;k++){
         produtos[k]->imprime_dados();
-        sleep(2);
-    }}
+        cout<<"_____________________________"<<endl;
+      
+        
+    }
+       cout <<"Digite qualquer número para sair"<<endl;
+       aux_cadastro=getInput<int>();
+       
+     break;}
     if(comando_estoque==0){
         system("clear");
         sleep(0.5);
@@ -192,7 +215,7 @@ int main(){
     break;
     }
 
-       // break;
+       
     
 
     case 4:

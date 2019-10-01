@@ -1,0 +1,19 @@
+Nome: Denys Rógeres Leles dos Santos
+Matrícula: 180041592
+
+bibliotecas usadas:
+
+iostream
+fstream
+string
+vector
+
+O software é possui três modos, sendo eles:
+
+(1) Venda (incompleto) , na qual o usuário pode cadastrar clientes socios e clientes;
+
+(2) Recomendação (incompleto);
+
+(3) Estoque: Nesse modo o usuário possui três opções: (1) cadastrar produtos, na qual ele cadastra o produto, pelo nome, quantidade, preco e categoriara  (2) Visualizar produtos já cadastrados, (3) voltar ao menu anterior.
+
+O software é bem instivo e possui interface amigável.

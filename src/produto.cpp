@@ -2,6 +2,8 @@
 #include "produto.hpp"
 #include <string>
 #include <vector>
+#include <fstream>
+#include "cadastro.hpp"
 
 
 using namespace std;
@@ -49,15 +51,20 @@ void Produto::set_preco(float preco){
 }
 
 void Produto::imprime_dados(){
+   
+
     cout << "Nome do produto: " << nome_prod <<endl;
     cout << "Quantidade: " << quant << endl;
     cout << "Preco: " << preco << endl;
+    
     int i = categoria.size();
     if(i==1)
     cout << "Categoria: ";
+    
     else 
     cout << "Categorias: " <<endl;
     for(int k=0;k<i;k++){
         cout << categoria[k] <<endl;
+        
     }
 }

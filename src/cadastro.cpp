@@ -34,7 +34,7 @@ fstream arquivoProduto;
 
 Produto prod_cadastro(){
 system("clear");
-arquivoProduto.open("Produto.txt",ios::out|ios::app);
+arquivoProduto.open("doc/Produto.txt",ios::out|ios::app);
 cout << "Cadastro de produto" <<endl;
 cout << "Nome do produto: ";
 string nome_prod = getString();
@@ -55,7 +55,7 @@ while(c<=0){
     c=getInput<int>();
     if(c==1)
     cout << "Informe sua categoria: "<<endl;
-    
+     
 
     else if(c>1)
     cout <<"Informe suas categorias "<<endl;
@@ -65,7 +65,7 @@ for(int b=0; b<c;b++){
     cout << b+1 << "° categoria: "<<endl;
     categoria.push_back(getString());
     arquivoProduto << categoria[b]<<endl;
-
+arquivoProduto.close();
 }
 Produto produto;
 system("clear");
