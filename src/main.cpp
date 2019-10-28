@@ -19,7 +19,7 @@ T1 getInput(){
         if(cin.fail()){
             cin.clear();
             cin.ignore(32776, '\n');
-            cout << "Entrada inválida! Insira novamete: " <<endl;
+            cout << "Entrada inválida! Digite novamete: " <<endl;
         }
     else {
 
